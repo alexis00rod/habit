@@ -1,0 +1,18 @@
+.bottomNavbar {
+  width: 100%;
+  height: 80px;
+  @extend .flex;
+  @extend .flex--none;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    max-width: $max-width;
+    @extend .mx--auto;
+    @extend .p--4;
+    @extend .flex;
+    @extend .justify--around;
+    @extend .align--center;
+    @extend .flex--none;
+  }
+}

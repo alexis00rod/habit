@@ -1,0 +1,30 @@
+@mixin position(
+  $position: relative,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin grid($cols) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+}
+
+@mixin ring($color) {
+  -webkit-box-shadow: 0px 0px 0px 2.5px $color;
+  -moz-box-shadow: 0px 0px 0px 2.5px $color;
+  box-shadow: 0px 0px 0px 2.5px $color;
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}

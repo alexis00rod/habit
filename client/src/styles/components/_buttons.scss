@@ -1,0 +1,89 @@
+$size: 38px;
+$size-max: 120px;
+
+$size-small: 30px;
+$size-medium: 38px;
+
+.btn {
+  width: 100%;
+  @extend .flex;
+  @extend .justify--center;
+  @extend .align--center;
+  @extend .flex--none;
+  @extend .gap--2;
+  border-radius: $rounded;
+  transition: background $duration;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  user-select: none;
+
+  i {
+    width: $size / 2;
+    height: $size / 2;
+    @extend .flex;
+    @extend .justify--center;
+    @extend .align--center;
+    @extend .flex--none;
+  }
+
+  // Size
+  &--small {
+    height: $size-small;
+  }
+  &--medium {
+    height: $size-medium;
+  }
+
+  // Variant
+  &--icon {
+    &.btn--small {
+      max-width: $size-small;
+    }
+    &.btn--medium {
+      max-width: $size-medium;
+    }
+  }
+  &--contained {
+    min-width: $size-max;
+    max-width: max-content;
+    @extend .px--4;
+  }
+
+  // Colors
+  &--primary {
+    background-color: $color-blue-300 !important;
+    color: $color-white-300 !important;
+    &:hover {
+      background-color: $color-blue-400 !important;
+    }
+    &:active {
+      @include ring($color-blue-300-50);
+    }
+    &:disabled {
+      background-color: $color-blue-200 !important;
+      &:hover {
+        background-color: $color-blue-200 !important;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+  &--secondary {
+    &:hover {
+      background-color: $color-black-300-10 !important;
+    }
+    &:active {
+      @include ring($color-black-300-25);
+    }
+    &:disabled {
+      background-color: transparent !important;
+      &:hover {
+        background-color: transparent !important;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+}

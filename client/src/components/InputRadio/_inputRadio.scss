@@ -1,0 +1,31 @@
+.inputRadio {
+  width: 100%;
+  height: 100%;
+  @extend .flex;
+  @extend .align--center;
+
+  input {
+    @extend .hidden;
+  }
+  label {
+    width: 100%;
+    height: 100%;
+    @extend .px--2;
+    @extend .flex;
+    @extend .align--center;
+  }
+  &__checkmark {
+    width: 25px;
+    height: 25px;
+    @extend .flex;
+    @extend .align--center;
+    @extend .justify--center;
+    @extend .flex--none;
+    i {
+      @extend .hidden;
+    }
+  }
+  input:checked ~ .inputCheckbox__checkmark i {
+    @extend .flex;
+  }
+}

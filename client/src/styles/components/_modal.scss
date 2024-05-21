@@ -1,0 +1,26 @@
+.modal {
+  width: 100%;
+  height: 100vh;
+  @include position(fixed, 0, 0, 0, 0);
+  @extend .p--4;
+  @extend .flex;
+  @extend .flex--col;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 100px;
+    @extend .mx--auto;
+    @extend .p--4;
+    @extend .flex;
+    @extend .flex--col;
+    background-color: $color-white-300;
+    border-radius: $rounded;
+    @extend .zoomOut;
+
+    &.open {
+      @extend .zoomIn;
+    }
+  }
+}

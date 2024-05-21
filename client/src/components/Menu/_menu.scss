@@ -1,0 +1,48 @@
+$height-item: 38px;
+
+.menu {
+  position: relative;
+
+  &__container {
+    width: 100%;
+    min-width: max-content;
+    &.left {
+      @include position(absolute, calc(100% + 3px), auto, auto, 0);
+    }
+    &.right {
+      @include position(absolute, calc(100% + 3px), 0, auto, auto);
+    }
+
+    &--expand {
+      width: 100%;
+      @extend .flex;
+      @extend .flex--col;
+      background-color: $color-white-300;
+      border: 0.1rem solid $color-black-300-50;
+      border-radius: $rounded;
+      overflow: hidden;
+      @extend .zoomOut;
+      &.open {
+        @extend .zoomIn;
+      }
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: $height-item;
+    @extend .px--2;
+    @extend .flex;
+    @extend .gap--2;
+    @extend .align--center;
+    font-size: $text-sm;
+    cursor: default;
+    i {
+      font-size: $text-base;
+    }
+    &:hover {
+      background-color: $color-blue-300;
+      color: $color-white-300;
+    }
+  }
+}

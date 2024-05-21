@@ -1,0 +1,98 @@
+.inputDate {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  @extend .flex;
+  @extend .flex--col;
+  @extend .flex--none;
+
+  &__label {
+    width: max-content;
+    height: 28px;
+    padding-left: 5px;
+    @extend .flex;
+    @extend .align--center;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    user-select: none;
+  }
+  &__field {
+    width: 100%;
+    height: 38px;
+    @extend .px--2;
+    @extend .flex;
+    @extend .align--center;
+    background-color: $color-black-300-10;
+    border-radius: $rounded;
+    user-select: none;
+    transition: $duration;
+    cursor: default;
+    p {
+      width: 100%;
+      font-size: $text-sm;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+    i {
+      color: $color-black-300-50;
+      transition: $duration;
+    }
+    &.focus {
+      @include ring($color-blue-300);
+      i {
+        color: $color-blue-300;
+      }
+    }
+    &:hover {
+      @include ring($color-blue-300);
+    }
+  }
+  &__picker {
+    @include position(absolute, calc(100% + 5px));
+    z-index: 30;
+    width: 280px;
+    &--container {
+      width: 100%;
+      @extend .p--1;
+      @extend .flex;
+      @extend .flex--col;
+      background-color: $color-white-300;
+      border: 0.1rem solid $color-black-300-50;
+      border-radius: $rounded;
+      overflow: hidden;
+      @extend .zoomOut;
+      &.open {
+        @extend .zoomIn;
+      }
+    }
+    &--month {
+      width: 100%;
+      @extend .p--2;
+      @extend .flex;
+      @extend .align--center;
+      @extend .gap--2;
+      h5 {
+        @extend .pl--1;
+        text-transform: capitalize;
+      }
+    }
+    &--days {
+      width: 100%;
+      @extend .p--2;
+      @include grid(7);
+      @extend .gap--1;
+      span {
+        width: 25px;
+        height: 25px;
+        @extend .flex;
+        @extend .align--center;
+        @extend .justify--center;
+        @extend .flex--none;
+        font-size: $text-xs;
+        text-align: center;
+      }
+    }
+  }
+}

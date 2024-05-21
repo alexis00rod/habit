@@ -1,0 +1,24 @@
+.app {
+  // width: 100%;
+  height: 100vh;
+  @extend .flex;
+  @extend .flex--colReverse;
+  @include desktop {
+    // @extend .flex--row;
+    flex-direction: row;
+    // @extend .debug;
+  }
+  // @extend .flex--col;
+
+  &__main {
+    @extend .grow;
+    // width: 100%;
+    // max-width: $max-width;
+    // height: 100%;
+    // @extend .mx--auto;
+    // @extend .p--4;
+    // @extend .flex;
+    // @extend .flex--col;
+    // overflow-y: auto;
+  }
+}

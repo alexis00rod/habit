@@ -1,0 +1,29 @@
+.dropdown {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @extend .flex;
+  @extend .align--center;
+  @extend .justify--between;
+
+  &__container {
+    position: absolute;
+    width: 100%;
+    max-width: max-content;
+    &--expand {
+      width: 100%;
+      // margin-left: 5px;
+      @extend .ml--3;
+      @extend .flex;
+      @extend .flex--col;
+      background-color: $color-white-300;
+      border: 0.1rem solid $color-black-300-50;
+      border-radius: $rounded;
+      overflow: hidden;
+      @extend .zoomOut;
+      &.open {
+        @extend .zoomIn;
+      }
+    }
+  }
+}
